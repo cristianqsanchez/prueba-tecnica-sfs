@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de Productos</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./product/products-form.js"></script>
+    <script src="./group/groups-form.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/index.css" />
+  </head>
+  <body>
+    <h1>CRUD de Productos</h1>
+
+    <main class="container">
+      <div>
+        <h2>Lista de Productos</h2>
+
+        <form id="create-product">
+          <input type="hidden" id="id"> <!-- Campo oculto para el ID -->
+          <input type="text" id="name" placeholder="Nombre" required><br>
+          <textarea id="description" placeholder="Descripción"></textarea><br>
+          <input type="number" id="price" placeholder="Precio" required><br>
+          <input type="number" id="stock" placeholder="Stock" required><br>
+          <button type="submit">Crear Producto</button>
+        </form>
+
+        <table border="1">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Descripción</th>
+              <th>Editar</th>
+              <th>Eliminar</th>
+            </tr>
+          </thead>
+          <tbody id="product-list">
+          </tbody>
+        </table>
+      </div>
+
+
+      <div>
+        <h2>Lista de Grupos</h2>
+
+        <form id="create-group">
+          <input type="hidden" id="group-id">
+          <input type="text" id="group-name" placeholder="Nombre del Grupo" required><br>
+          <select id="product-select" multiple required>
+          </select><br>
+          <button type="submit">Crear Grupo</button>
+        </form>
+
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Grupo</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="group-list">
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>
